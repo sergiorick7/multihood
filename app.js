@@ -1,10 +1,13 @@
 const contractAddress = "0xF0a82C2FD5a392D002Bc5BB358327556d13AF820";
-const abi = [
-  {"inputs":[],"name":"mintNFT","outputs":[],"stateMutability":"payable","type":"function"},
-  {"inputs":[],"name":"sayGM","outputs":[],"stateMutability":"payable","type":"function"},
-  {"inputs":[],"name":"sayGN","outputs":[],"stateMutability":"payable","type":"function"},
-  {"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}
-];
+const tasks = [
+        { name: "Say GM", func: () => contract.sayGM({ value: ethers.parseEther("0.0001") }) },
+        { name: "Say GN", func: () => contract.sayGN({ value: ethers.parseEther("0.0001") }) },
+        { name: "Mint NFT", func: () => contract.mintNFT({ value: ethers.parseEther("0.0001") }) },
+        { name: "Deploy NFT", func: () => contract.deployNFT({ value: ethers.parseEther("0.0001") }) },
+        { name: "Deploy Token", func: () => contract.deployToken({ value: ethers.parseEther("0.0001") }) },
+        { name: "Deploy Contract", func: () => contract.deployContract({ value: ethers.parseEther("0.0001") }) },
+        { name: "Create Collection", func: () => contract.createCollection({ value: ethers.parseEther("0.0001") }) }
+    ];
 
 let signer, contract;
 
